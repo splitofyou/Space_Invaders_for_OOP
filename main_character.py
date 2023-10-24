@@ -11,13 +11,17 @@ class MainCharacter():
         self.move_right = False
         self.move_left = False
 
-    def output(self):
-        self.screen.blit(self.image, self.rect)
-        self.screen.blit(self.image, self.rect)
+        def output(self):
+            self.screen.blit(self.image, self.rect)
 
-    def moving(self):
+        def moving(self, screen):
+            if self.move_right and self.rect.right < self.screen_rect.right:
+                self.rect.centerx += 1
+            if self.move_left and self.rect.left > 0:
+                self.rect.centerx -= 1
+            screen.fill(0)
 
-        if self.move_right and self.rect.right < self.screen_rect.right:
-            self.rect.centerx += 5
-        elif self.move_left and self.rect.left > 0:
-            self.rect.centerx -= 5
+        def shoot(self):
+            bullet = bullet(self.rect.centerx, self.rect.top)
+            all_sprites.add(bullet)
+            bullets.add(bullet)

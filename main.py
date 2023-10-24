@@ -14,24 +14,20 @@ def start_game():
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_d:
-                    maincharacter.rect.centerx += 1
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_d:
                     maincharacter.move_right = True
-            elif event.type == pygame.KEYUP:
+            if event.type == pygame.KEYUP:
                 if event.key == pygame.K_d:
                     maincharacter.move_right = False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_a:
-                    maincharacter.rect.centerx -= 1
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_a:
                     maincharacter.move_left = True
-            elif event.type == pygame.KEYUP:
+            if event.type == pygame.KEYUP:
                 if event.key == pygame.K_a:
                     maincharacter.move_left = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_w:
+                    maincharacter.shoot()
 
         maincharacter.output()
         pygame.display.flip()
-
-start_game()
+        maincharacter.moving(screen)
