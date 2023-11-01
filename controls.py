@@ -6,7 +6,7 @@ import time
 
 
 def events(screen, maincharacter, bullets):
-    """обработка событий"""
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
@@ -47,7 +47,6 @@ def update_bullets(screen, enemys, bullets):
 def update_enemys(stats, screen, maincharacter, enemys, bullets):
     enemys.update()
     if pygame.sprite.spritecollideany(maincharacter, enemys):
-        #print("!!!!!!!!!!!!")
         maincharacter_kill(stats, screen, maincharacter, enemys, bullets)
         enemys_check(stats, screen, maincharacter, enemys, bullets)
 
