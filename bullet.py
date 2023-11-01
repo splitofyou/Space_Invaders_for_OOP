@@ -13,7 +13,7 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
         self.rect.y += self.speedy
         if self.rect.bottom < 0:
-            self.kill()
+            self.kill(0)
 
 
 bullets = pygame.sprite.Group()
