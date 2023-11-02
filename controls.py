@@ -26,6 +26,7 @@ def events(screen, maincharacter, bullets):
 
 
 def update(screen, maincharacter, enemys, bullets):
+    bg = pygame.image.load("images/bg.png")
     screen.fill(0)
     for bullet in bullets.sprites():
         bullet.draw_bullet()
@@ -53,7 +54,7 @@ def update_enemys(stats, screen, maincharacter, enemys, bullets):
 def create_army(screen, enemys):
     enemy = Enemy(screen)
     enemy_width = enemy.rect.width
-    number_enemy_x = int((600 - 2 * enemy_width) / enemy_width)
+    number_enemy_x = int((1000 - 2 * enemy_width) / enemy_width)
     enemy_height = enemy.rect.height
     number_enemy_y = int((900 - 500 - 2 * enemy_height) / enemy_height)
     for row_num in range(number_enemy_y):

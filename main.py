@@ -3,17 +3,21 @@ from main_character import MainCharacter
 from pygame.sprite import Group
 from stats import Stats
 
+
 def start_game():
     pygame.init()
-    screen = pygame.display.set_mode((600, 900))
+    screen = pygame.display.set_mode((1000, 900))
     pygame.display.set_caption("WAY2DIE")
 
+    
     maincharacter = MainCharacter(screen)
     bullets = Group()
     # enemy = Enemy(screen)
     enemys = Group()
 
     controls.create_army(screen, enemys)
+    bg = pygame.image.load("images/bg.png")
+    screen.blit(bg, (0, 0))
 
     stats = Stats()
     flag = True
