@@ -26,13 +26,11 @@ def events(screen, maincharacter, bullets):
 
 
 def update(screen, maincharacter, enemys, bullets):
-    bg = pygame.image.load("images/bg.png")
-    screen.fill(0)
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     maincharacter.output()
     enemys.draw(screen)
-    pygame.display.flip()
+    #pygame.display.flip()
 
 
 def update_bullets(screen, enemys, bullets):
