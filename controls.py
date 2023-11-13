@@ -30,7 +30,6 @@ def update(screen, maincharacter, enemys, bullets):
         bullet.draw_bullet()
     maincharacter.output()
     enemys.draw(screen)
-    #pygame.display.flip()
 
 
 def update_bullets(screen, enemys, bullets):
